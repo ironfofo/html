@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>觀光署會員資料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+
+</head>
+
+<body>
+    <div class="banner bg-cover pt-3 pe-3" style="background-image: url(img/b16.jpg);height: 250px;">
+        <div class="display-1 fw-900 text-white">觀光署旅館資料</div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <select name="regionList" id="regionList" class="form-select" style="margin-top: -15px;">
+                    <option value="" disabled selected>--請選擇縣市--</option>
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-4" id="dataList">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card h-100">
+                    <img src="https://taiwan.taiwanstay.net.tw/twpic/3693.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <div class="h3 fw-900">XXX旅館</div>
+                        <div class="h3 fw-900">地址:XXXXXXX</div>
+                        <div class="h3 fw-900">電話0800XXXXXXX</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-lg justify-content-center" id="pageList">
+                        <li class="page-item disabled" onclick="drawTable(xxx)">
+                            <a class="page-link">上一頁</a>
+                        </li>
+                        <li class="page-item" onclick="drawTable(xxx)"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" onclick="drawTable(xxx)">下一頁</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        var hoteldata = [];
+        var regionTitle = [];
+        var counter = [];
+        var regionData = [];
+        var newData = [];//for頁面
+
+        $(function () {
+
+
+
+            //載入hoteldata
+            $.ajax({
+                type: "GET",
+                url: "js/hotel_C_f.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    hoteldata = data.XML_Head.Infos.Info;
+                },
+                error: function () {
+                    alert("error-js/hotel_C_f.json");
+                }
+            });
+
+            console.log(hoteldata);
+            hoteldata.forEach(function (item) {
+                // console.log(item.Region);
+                if (counter[item.Region] == undefined) {
+                    counter[item.Region] = regionData.length;
+                    regionData.push(new Array());
+                    regionTitle[counter[item.Region]] = item.Region;
+                }
+                regionData[counter[item.Region]].push(item);
+            });
+
+            console.log(regionTitle);
+            console.log(counter);
+            console.log(regionData);
+
+            //產生縣市選單
+            $("#regionList").empty();
+            $("#regionList").append('<option value="" disabled selected>--請選擇縣市--</option>');
+            regionTitle.forEach(function (item) {
+                var strHTML = '<option value="' + item + '" >' + item + '</option>';
+                $("#regionList").append(strHTML);
+            })
+
+            $("#dataList").empty();
+            $("#regionList").change(function () {
+                newData = [];
+                console.log($(this).val());
+                console.log(regionData[counter[$(this).val()]]);
+                var hotelData = regionData[counter[$(this).val()]];
+
+
+                hotelData.forEach(function (item, key) {
+                    console.log(item);
+                    console.log();
+
+
+                    if (key % 10 == 0) {
+                        newData.push([]);
+
+                    }
+                    var page = parseInt(key / 10);
+                    newData[page].push(item);
+                });
+                console.log(newData);
+                //頁數初始化頁面
+                drawTable(0);
+
+            });
+
+
+
+            function drawTable(page) {
+                $("#dataList").empty();
+
+                // 確保有資料在頁面上顯示
+                if (newData.length > 0 && newData[page]) {
+                    newData[page].forEach(function (item) {
+                        var Pic = item.Picture1 || "img/5.jpg";
+                        var strHtml = '<div class="col-md-6 col-lg-4 col-xl-3"><div class="card h-100"><img src="' + Pic + '" alt="" class="card-img-top"><div class="card-body"><div class="h3 fw-900">' + item.Name + '</div><div class="h3 fw-900">地址:' + item.Add + '</div><div class="h3 fw-900">電話:' + item.Tel + '</div></div></div></div>';
+                        $("#dataList").append(strHtml);
+                    });
+                }
+
+                // 生成頁碼
+                $("#pageList").empty();
+
+                // 上一頁
+                var prevDisabled = page === 0 ? ' disabled' : ''; //判斷是否禁用
+                var prevPage = page === 0 ? '#' : 'javascript:drawTable(' + (page - 1) + ')'; //上一 頁連結
+                $("#pageList").append('<li class="page-item' + prevDisabled + '"><a class="page-link" href="' + prevPage + '">上一頁</a></li>');
+
+                // 頁碼
+                for (var i = 0; i < newData.length; i++) {
+                    var pageClass = i === page ? ' active' : ''; // 當前頁碼加上 active 樣式
+                    $("#pageList").append('<li class="page-item"><a class="page-link' + pageClass + '" href="javascript:drawTable(' + i + ')">' + (i + 1) + '</a></li>');
+                }
+
+                // 下一頁
+                var nextDisabled = page === newData.length - 1 ? ' disabled' : '';// 判斷是否禁用
+                var nextPage = page === newData.length - 1 ? '#' : 'javascript:drawTable(' + (page + 1) + ')';// 下一頁的連結
+                $("#pageList").append('<li class="page-item' + nextDisabled + '"><a class="page-link" href="' + nextPage + '">下一頁</a></li>');
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

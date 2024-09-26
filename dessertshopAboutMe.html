@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關與我們</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+
+    <style>
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline-section::before {
+            position: absolute;
+            content: "";
+            top: 10px;
+            bottom: 0px;
+            width: 8px;
+            background-color: var(--mycolor07);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .timeline-section-point {
+            position: relative;
+        }
+
+        .timeline-section-point::before {
+            position: absolute;
+            content: "";
+            top: 3px;
+            ;
+            height: 20px;
+            width: 20px;
+            border: 4px solid var(--mycolor06);
+            /* double雙層 */
+            outline: 3px double var(--mycolor06);
+            border-radius: 50%;
+            background-color: var(--mycolor07);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        @media screen and (max-width:768px) {
+            .timeline-section::before {
+                left: -20px;
+            }
+
+            .timeline-section-point::before {
+                left: -10px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="dessertshopIndex.html"><i class="fa-solid fa-lemon"></i>
+                太好吃甜點店
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-1" aria-current="page" href="dessertshopIndex.html"><i class="fa-solid fa-shop"></i>
+                            首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-1 active" href="dessertshopAboutMe.html"><i
+                                class="fa-solid fa-people-line"></i>
+                            關於我們</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle me-1" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"><i class="fa-solid fa-cookie"></i></i>
+                            產品介紹
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="dessertshopCake.html"><i
+                                        class="fa-solid fa-cake-candles"></i>熱門甜點</a></li>
+                            <li><a class="dropdown-item" href="dessertshopSstaff.html"><i class="fa-solid fa-people-group"></i>工作人員</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner bg-info bg-cover d-none d-md-block"
+        style="height: 260px;background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(156, 156, 156, 0.2)), url(img/cake7.jpg);">
+    </div>
+
+    <!--Ex:時間軸 -->
+
+    <div class="container">
+        <div class="timeline-section">
+            <div class="row align-items-center timeline-section-point">
+                <div class="col-md-6 mt-3 text-center ">
+                    <div class="h3 text-danger fe-900">關於我們<small class="text-muted">About Us</small></div>
+                    <p class="fw-700">起家故事</p>
+                    <ul class="list-unstyled">
+                        <li >
+                            歡迎來到我們的蛋糕店！從一個小小的家庭烘焙坊起家，我們專注於傳統製作技藝，搭配現代創意，為您呈現最完美的蛋糕。我們的故事始於幾十年前，當時的創始人以其獨特的食譜和對品質的堅持，贏得了社區的喜愛和信任。如今，我們仍然秉承著這一精神，每天都努力工作，確保每一塊蛋糕都能帶給您滿滿的幸福和滿足感。從那個小小的起點到現在的成就，我們感謝您的支持和愛護，並期待繼續與您分享更多甜蜜時刻。讓我們一同繼續創造美好的蛋糕和回憶！
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-4 bg-cover" style="background-image: url(img/dessertshop2.jpg);height:260px">
+                </div>
+            </div>
+
+            <div class="row align-items-center timeline-section-point flex-row-reverse">
+                <div class="col-md-6 mt-3 text-center ">
+                    <div class="h3 text-danger fw-900">店家資訊<small class="text-muted">DessertShop Info</small></div>
+                    <p class="fw-700">專業團隊</p>
+                    <ul class="list-unstyled fw-700">
+                        <li>地址:XXXXXX</li>
+                        <li>電話:XX-XXXX-XXXX</li>
+                        <li>營業時段</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-4 bg-cover" style="background-image: url(img/dessertshop.jpg);height:260px">
+                </div>
+            </div>
+
+            <div class="row align-items-center timeline-section-point">
+                <div class="col-md-6 mt-3 text-center ">
+                    <div class="h3 text-danger fe-900">關於我們<small class="text-muted">About Us</small></div>
+                    <p class="fw-700">設備完善</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            歡迎來到我們的甜點店！我們專注於提供高品質、新鮮製作的甜點，讓您享受每一口的美好滋味。無論是優雅的法式馬卡龍、精緻的提拉米蘇，還是口感豐富的巧克力慕斯，每一款甜點都精心挑選原材料，精心烘焙而成，為您帶來滿足與喜悅。
+                            
+                            我們不僅注重產品的美味，更重視服務的品質。每一位客人都能感受到我們的熱情和專業，無論您是途經而來還是特意造訪，我們都致力於讓您的甜點體驗成為一段難忘的時光。
+                            
+                            無論是小聚會、生日慶祝或是單純的午後茶歇，我們都能滿足您的味蕾需求。期待您的光臨，與我們一同分享甜點與快樂的美好時光
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-4 bg-cover" style="background-image: url(img/cake3.jpg);height:260px">
+                </div>
+            </div>
+
+            <div class="row align-items-center timeline-section-point flex-row-reverse">
+                <div class="col-md-6 mt-3 text-center ">
+                    <div class="h3 text-danger fw-900">地圖資訊<small class="text-muted">Map Info</small></div>
+                    <p class="fw-700">地圖資訊</p>
+                    <ul class="list-unstyled fw-700">
+                        <li>地址:XXXXXX</li>
+                        <li>電話:XX-XXXX-XXXX</li>
+                        <li>營業時段</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-4 bg-cover"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29120.274025984756!2d120.5954020183715!3d24.170531462217404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e048d342aa9%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1sen!2stw!4v1720485376248!5m2!1sen!2stw" width="100%" height="260px" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    <div class="footer text-bg-dark h6 fw-300 text-center py-2 mt-3 fw-300">
+        @效果太好診所
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

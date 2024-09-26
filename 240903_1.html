@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料結構重整(重構)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+</head>
+
+<body>
+    <div class="conteiner">
+        <div class="row justify-content-center mt-4">
+            <div class="col-10">
+                <div class="card h-100">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        var counter = [];
+        var regionTitle = [];
+        var regionData = [];
+        var myChart;
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "hoteldata_Read_api.php",
+                dataType: "json",
+                success: showdata,
+                error: function () {
+                    alert("error-hoteldata_Read_api.php");
+                }
+            });
+
+            const ctx = document.getElementById('myChart');
+            myChart = new Chart(ctx, {
+
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange000'],
+                    datasets: [{
+                        label: '區域分類',
+                        data: [200, 300, 400, 500, 600, 700],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+        })
+        function showdata(data) {
+            console.log(data);
+            data.data.forEach(function (item) {
+                console.log(item.display_addr);
+                //indexofㄑ(從甚麼字,第幾個字開始)，輸出是字從第0個到區這個位置是第幾個
+                console.log(item.display_addr.indexOf('區', 0));
+                //substring(從第幾個字,字的長度)
+                console.log(item.display_addr.substring(0, item.display_addr.indexOf('區', 0) + 1));
+
+                var getregion = item.display_addr.substring(0, item.display_addr.indexOf('區', 0) + 1);
+                if (counter[getregion] == undefined) {
+                    counter[getregion] = regionData.length;
+                    regionData.push(new Array());
+                    regionTitle[counter[getregion]] = getregion;
+                }
+                regionData[counter[getregion]].push(item);
+            });
+            console.log(regionTitle);
+            console.log(counter);
+            console.log(regionData);
+
+            //清空chartjs數據
+            myChart.data.labels = [];
+            myChart.data.datasets[0].data = [];
+
+            //加入區域名稱(X軸)和數量(Y軸)
+            regionTitle.forEach(function (item) {
+                console.log(item);
+                myChart.data.labels.push(item); //X軸
+                myChart.data.datasets[0].data.push(regionData[counter[item]].length); //Y軸
+            });
+
+            myChart.update();
+
+        }
+
+
+    </script>
+</body>
+
+</html>

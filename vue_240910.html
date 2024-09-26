@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/myall.css">
+
+    <style>
+        .box01 {
+            width: 200px;
+            height: 200px;
+            transition: transform 1s;
+        }
+
+        .rotate {
+            /* 旋轉 */
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="h1">{{text01}}</div>
+        <!-- 通常不會用這種，會被植入html語法，多使用後台 -->
+        <div v-html="text_html"></div>
+        <div>{{img_html}}</div>
+        <div v-html="img_html"></div>
+        <div class="mb-3">
+
+            <label for="" class="form-label">帳號</label>
+            <!-- v-model雙向版綁定網 -->
+            <input type="text" class="form-control" v-model="userName">
+            <!-- 即時顯示 -->
+            <span class="h3 fw-900 text-danger">我得帳號:{{userName}}</span>
+
+            <!-- v-bind專門綁定相關屬性或參數 -->
+            <img v-bind:src="imgSrc" v-bind:class="className" alt="">
+            <br>
+            <div class="h1" v-bind:class="is_linethrough">測試class綁定功能</div>
+
+            <div class="row my-5">
+                <div class="col-12">
+                    <ul class="list-group">
+                        <!-- 
+                            v-for專門用v-ray寫迴圈 
+                            v-if就是if片段式
+                            v-if與v-for不能寫在一起
+                                                    -->
+                        <template v-for="(item,key) in list">
+                            <li class="list-group-item d-flex" v-if="item.price>50">
+                                <span class="h4 text-success fw-400 me-auto">{{key+1}}.{{ item.product }}</span>
+                                <span>{{item.price}}元</span>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="row my-5">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <!-- v-on監聽 -->
+                        <a class="nav-link" href="#" v-on:click="mylink='tiger'"
+                            v-bind:class="{'active':mylink=='tiger'}">tiger</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" v-on:click="mylink='dog'"
+                            v-bind:class="{'active':mylink=='dog'}">dog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" v-on:click="mylink='cat'"
+                            v-bind:class="{'active':mylink=='cat'}">cat</a>
+                    </li>
+                </ul>
+                <div v-if="mylink=='tiger'">tiger很暖</div>
+                <div v-if="mylink=='dog'">dog很暖</div>
+                <div v-if="mylink=='cat'">cat很暖</div>
+            </div>
+
+
+            <!--
+             v-on  事件綁定   @
+            v:bind 屬性綁定  : 
+            -->
+            <div class="row my-5">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <!-- prevent原地跳轉 因為<a>會跳轉-->
+                        <a class="nav-link " href="#" @click.prevent="myprice=30"
+                            :class="{'active':myprice==30}">30元以上</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click.prevent="myprice=40"
+                            :class="{'active':myprice==40}">40以上</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click.prevent="myprice=50"
+                            :class="{'active':myprice==50}">50元以上</a>
+                    </li>
+                </ul>
+
+                <ul class="list-group mt-4">
+                    <template v-for="(item,key) in list">
+                        <li class="list-group-item d-flex" v-if="item.price>myprice">
+                            <span class="h4 text-succes fw-500 me-auto">{{item.product}}</span>
+                            <span>{{item.price}}元</span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+
+            <!-- @keyup.enter滑鼠挑起時會作用 -->
+            <div class="row my-5 border border-4 py-3">
+                <div class="mb-3">
+                    <label for="" class="form-label">輸入字串</label>
+                    <input type="text" class="form-control" v-model="newText" @keyup.enter="reverseText">
+                    <h3>你輸入的字:{{newText}}</h3>
+                    <button class="btn btn-primary" @click="reverseText">反轉文字</button>
+                    <h3>文字反轉:{{reText}}</h3>
+                    <hr>
+                    <h3>文字反轉(computed):{{reverseText01}}</h3>
+                </div>
+            </div>
+
+            <div class="row my-5 border border-4 py-3">
+                <div class="col-12">
+                    <div class="box01 border border-danger" :class="{'rotate':isRotate}"></div>
+                    <hr>
+                    <!--
+                     當按鈕被點擊時，會切換 isRotate 的布林值，從 true 變成 false，或從 false 變成 true。
+                         -->
+                    <button class="btn btn-success" @click="isRotate=!isRotate">旋轉</button>
+                </div>
+            </div>
+
+
+            <div class="row my-5 border border-4 py-3">
+                <div class="col-12">
+                    <!-- rounded-circle是bootstrap的圓形 -->
+                    <div class="box01 border border-info " :class="{'rounded-circle':isCircle}"></div>
+                    <hr>
+                    <button class="btn btn-success " @click="isCircle=!isCircle">變圓形</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .line-through {
+            text-decoration: line-through;
+        }
+    </style>
+    <script>
+        const App = {
+            data() {
+                return {
+                    text01: 'hello word',
+                    text_html: '<h3> 這是HTML指令</h3>',
+                    img_html: '<img src="img/b0.jpg" class="img-fluid" alt="">',
+                    userName: 'owner',
+                    imgSrc: 'img/b1.jpg',
+                    className: 'w-25',
+                    is_linethrough: 'line-through',
+                    list: [
+                        {
+                            product: '美式咖啡',
+                            price: 60,
+                        },
+                        {
+                            product: '拿鐵咖啡',
+                            price: 80,
+                        },
+                        {
+                            product: '紅茶豆漿',
+                            price: 45,
+                        },
+                        {
+                            product: '綠茶豆漿',
+                            price: 45,
+                        },
+                        {
+                            product: '蜂蜜紅茶',
+                            price: 45,
+                        },
+                        {
+                            product: '紅茶冰',
+                            price: 35,
+                        },
+                    ],
+                    mylink: '',
+                    myprice: 0,
+                    newText: '',
+                    reText: '',//文字反轉
+                    isRotate: false,
+                    isCircle: false,
+                }
+            },
+            //methods觸發用
+            methods: {
+                reverseText() {
+                    //*this是list:[]理資料
+                    //*字串無法反轉，陣列可以
+                    this.reText = this.newText.split('').reverse().join(' ');
+                }
+            },
+            //資料有變就馬上變,適合不需要放進Data或不影響下一個動作,佔效能
+            computed: {
+                reverseText01() {
+                    return this.newText.split('').reverse().join(' ');
+                }
+
+            }
+        }
+        //mount()掛載
+        Vue.createApp(App).mount("#app");
+    </script>
+</body>
+
+</html>

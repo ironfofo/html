@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公司形象官網</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+
+    <style>
+        .s11_text {
+            z-index: 10;
+            background-color: rgb(0, 0, 0, 0.3);
+            color: white;
+            padding: 20px;
+        }
+
+
+        @media screen and (max-width:768px) {
+
+            .s07_text,
+            .s09_text {
+                z-index: 10;
+                background-color: rgb(0, 0, 0, 0.3);
+                color: white;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- s01 -->
+    <section id="s01" class="bg-secondary wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0s"
+        data-wow-iteration="1">
+        <div class="container text-end">
+            <a href="#" style="text-decoration: none">
+                <i class="fa-brands fa-square-facebook text-white"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-square-x-twitter text-white"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="s02" class="bg-dark sticky-lg-top wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0s"
+        data-wow-iteration="1">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                </style>>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><i class="fa-solid fa-bicycle"></i>路過腳踏車店</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s03">關與我們</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s04">營業介紹</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s04">營業介紹</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s10">聯絡我們</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s14">加入我們</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="todo.html">Todo</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    VIP會員功能
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" href="240731_Product.html"
+                                            id="s02_login_01">產品建檔</a></li>
+                                    <li><a class="dropdown-item disabled" href="240731_member_control_panel.html"
+                                            id="s02_login_02">會員管理</a></li>
+                                    <li><a class="dropdown-item disabled" href="#" id="s02_login_03">會員功能</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <span class="h5 text-success fw-500 d-none" id="s02_login_username01">會員:</span> <span
+                                class="h5 text-danger fw-500 d-none" id="s02_login_username02">xxx</span>
+                            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                id="s02_login_btn">登入</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
+                                id="s02_register_btn">註冊</button>
+                            <button class="btn btn-primary d-none" id="s02_logout_btn">登出</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-success">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="loginModal_username" class="form-label">帳號</label>
+                        <input type="text" name="loginModal_username" id="loginModal_username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginModal_password" class="form-label">密碼</label>
+                        <input type="password" name="loginModal_password" id="loginModal_password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="loginModal_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-primary">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>會員守則</h3>
+                            <p>會員應尊重他人，遵守規章制度，積極參與活動，保護組織資源。違反守則者將面臨警告或處分，確保組織和諧運作</p>
+                            <h4>1.尊重他人</h4>
+                            <p>對所有會員保持禮貌，避免任何形式的歧視或侮辱。</p>
+                            <h4>2.誠實守信：</h4>
+                            <p>提供真實資料，遵守承諾，不做虛假陳述。</p>
+                            <h4>3.遵守規則：</h4>
+                            <p>遵循俱樂部或組織的所有規定和程序。</p>
+                            <h4>4.保護隱私：</h4>
+                            <p>尊重並保護他人的個人信息，避免未經授權的分享。</p>
+                            <div class="form-check">
+                                <input type="checkbox" name="check01" id="check01" class="form-check-input is-invalid">
+                                <label for="" class="form-check-label">同意</label>
+                                <div class="valid-feedback">我會遵守</div>
+                                <div class="invalid-feedback">請勾選</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="register_username" class="form-label">帳號</label>
+                                <input type="text" name="register_username" id="register_username"
+                                    class="form-control is-invalid" placeholder="字數5~10" value="">
+                                <div class="valid-feedback">已填寫</div>
+                                <div class="invalid-feedback" id="number1">字數5~10內</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">密碼</label>
+                                <input type="password" name="register_password" id="register_password"
+                                    class="form-control is-invalid" placeholder="字數7~14" value="">
+                                <div class="valid-feedback">已填寫</div>
+                                <div class="invalid-feedback">請填寫</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">確認密碼</label>
+                                <input type="password" name="register_repassword" id="register_repassword"
+                                    class="form-control is-invalid" placeholder="確認密碼">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">EMAIL</label>
+                                <input type="email" name="register_email" id="email" class="form-control is-invalid"
+                                    placeholder="email" value="">
+                                <div class="valid-feedback">已填寫</div>
+                                <div class="invalid-feedback">請填寫</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dates" class="form-label">出生年月日</label>
+                                <input type="text" name="dates" id="dates" class="form-control is-invalid" readonly>
+                                <div class="valid-feedback">已填寫</div>
+                                <div class="invalid-feedback">請填寫</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">性別</label>
+                                <select name="gender" id="gender" class="form-select is-invalid">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                    <option value="不知道">不知道</option>
+                                </select>
+                                <div class="valid-feedback">已填寫</div>
+                                <div class="invalid-feedback">請填寫</div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">連絡電話</label>
+                                    <input type="tel" name="phone" id="phone" class="form-control is-invalid" value="">
+                                    <div class="valid-feedback">已填寫</div>
+                                    <div class="invalid-feedback">請填寫</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" name="ok_btn" id="ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- s03關於我們 -->
+    <section id="s03" class="wow animate__fadeIn d-none" data-wow-duration="4s" data-wow-delay="0s"
+        data-wow-iteration="1">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item bg-cover active" style="background-image: url(img/b0.jpg);height: 100vh;">
+                    <div class="carousel-caption rounded-2 shadow-lg d-none d-md-block mb-5 wow animate__flipInX"
+                        data-wow-duration="5s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background-color: rgb(0,0,0,0.3);">
+                        <h5>探索無限路途</h5>
+                        <p>騎上自行車，感受風的輕拂與心靈的自由。無論是城市街道還是蜿蜒小徑，每一次踏板都是對生活的熱愛</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b1.jpg);height: 100vh;">
+                    <div class="carousel-caption rounded-2 shadow-lg d-none d-md-block mb-5 wow animate__flipInX"
+                        data-wow-duration="5s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background-color: rgb(0,0,0,0.3);">
+                        <h5>綠意生活，從騎行開始</h5>
+                        <p>選擇自行車，減少碳足跡，守護環境。每一次騎行都是對地球的承諾，讓我們一起向可持續生活邁進！</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b2.jpg);height: 100vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block mb-5 wow animate__flipInX"
+                        data-wow-duration="5s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background-color: rgb(0,0,0,0.3);">
+                        <h5>健康與活力</h5>
+                        <p>踩動踏板，釋放壓力，塑造健康體魄。自行車不僅是交通工具，更是你日常運動的最佳夥伴。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b3.jpg);height: 100vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block mb-5 wow animate__flipInX"
+                        data-wow-duration="5s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background-color: rgb(0,0,0,0.3);">
+                        <h5>與友同行，樂趣無窮</h5>
+                        <p>邀請朋友一同騎行，分享沿途風景與笑聲。自行車旅行讓每一次出發都充滿驚喜與友誼。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b5.jpg);height: 100vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block mb-5 wow animate__flipInX"
+                        data-wow-duration="5s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background-color: rgb(0,0,0,0.3);">
+                        <h5>都市中的悠閒</h5>
+                        <p>在繁忙的城市中，自行車讓你輕鬆穿梭，避開擁堵，享受自在的生活節奏。每次出門，都是一次輕鬆愉快的旅程。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- s04 -->
+    <section id="s04" class="d-none">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-5 bg-cover wow animate__fadeInLeftBig" data-wow-duration="3s" data-wow-delay="0s"
+                    data-wow-iteration="1"
+                    style="background-image: url(img/b11.jpg);height: 50vh; background-attachment: local;">
+                </div>
+                <div class="col-md-7 p-5  wow animate__fadeInRight" data-wow-duration="5s" data-wow-delay="0s"
+                    data-wow-iteration="1">
+                    <h1>腳踏車站<span class="text-success">全球銷售冠軍</span></h1>
+                    <h1>最新科技</h1>
+                    <p class="mb-1">腳踏車首選</p>
+                    <p class="mb-1">優點像素涉及，行動類別理論股東什麼樣程。</p>
+                    <p class="mb-1">主題信譽並不是吃了福州好了本公司無人先。</p>
+                    <div class="row">
+                        <div class="col-3">
+                            <h4>年銷售量</h4>
+                            <h2 class="counter01">100M<span class="h4">/輛</span></h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>專業認證</h4>
+                            <h2 class="counter02">10 <span class="h4">/項</span></h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>銷售據點</h4>
+                            <h2 class="counter03">300<span class="h4">/個</span></h2>
+                        </div>
+                        <div class="col-3">
+                            <h4>國際獎項</h4>
+                            <h2 class="counter04">52 <span class="h4">/輛</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s05 -->
+    <section class=" wow animate__fadeInUp d-none" id="s05" data-wow-duration="3s" data-wow-delay="0s"
+        data-wow-iteration="1"
+        style="background-image: url(img/b4.jpg);background-size:cover;background-position:center center;background-attachment: fixed;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-white">
+                    <p>工資屏東遠程對象開關分析回到機構網站而在如果您組圖代理，關係一直貼布類似決定營。</p>
+                </div>
+                <div class="col-md-8 text-white py-5">
+                    自行車的歷史可追溯到19世紀初。最早的自行車形態是1817年由德國巴倫·卡爾·馮·德賴斯（Baron Karl von
+                    Drais）發明的“步行機”，它是一種無腳踏的木製車輛，通過蹬腿推動。接著，在1860年代，法國的皮埃爾·米歇爾（Pierre
+                    Michaux）和他的兒子發明了加裝腳踏的自行車，稱為“高輪車”或“佩德車”。這種設計的特點是前輪大而後輪小，但不夠實用。
+
+                    1870年代，英國的約翰·斯塔利（John Starley）發明了“安全車”（Safety
+                    Bicycle），它引入了現代自行車的關鍵特徵，如平衡的輪子和鏈條傳動系統。這一設計使得自行車更加穩定、安全和易於駕駛。隨著技術的進步，自行車逐漸演變成今天的多種款式，成為日常生活中重要的交通工具，也促進了健康和環保的生活方式。
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- s06 -->
+    <section id="s06" class="bg-13 d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center mt-4 mb-3">
+                    <i class="fa-brands fa-pagelines fa-6x text-success mb-3"></i>
+                    <h5 class="fw-900 mb-3">綠色環保</h5>
+                    <p class="fs-5">
+                        腳踏車不排放二氧化碳或其他污染物，對空氣質量有正面影響，是實現綠色交通的重要選擇，有助於減少全球變暖和改善城市環境。
+                    </p>
+                </div>
+                <div class="col-md-4 text-center mt-4 mb-3">
+                    <i class="fa-solid fa-battery-three-quarters fa-6x text-success mb-3"></i>
+                    <h5 class="fw-900 mb-3">能源消耗</h5>
+                    <p class="fs-5">
+                        腳踏車依賴人力驅動，不需要電力或燃料，避免了能源消耗，有效降低了對電力資源的需求，符合節能減排的現代要求。
+                    </p>
+                </div>
+                <div class="col-md-4 text-center mt-4 mb-3">
+                    <i class="fa-solid fa-tree-city fa-6x text-success mb-3"></i>
+                    <h5 class="fw-900 mb-3">環境友善</h5>
+                    <p class="fs-5">
+                        腳踏車減少交通擁堵和空氣污染，對土地和水源的影響微乎其微，是可持續交通系統的重要組成部分，支持健康和綠色生活方式。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s07 -->
+    <section id="s07" class="d-none" style=" position: relative;">
+        <div class="row">
+            <div class="col-md-5 bg-cover"
+                style="position: absolute;background-image: url(img/b6.jpg);top: 0;bottom: 0;"></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-7 my-5 s07_text">
+                    <div class="h3">危險犯罪大力大會灌水穿著我看注意，熱線。</div>
+                    <p>浙江不會沒有顯然之一國內外威望，勞動等級下來標誌中心突然僅僅，試題很少，自動想到加上短信限制幫你會有聽到未知要去，的人同學，規定來到良好提醒危險，主持一方面沒事這是總是測試決定整合老人沒有任何，本地下載道德不限窗口律師郵件，最佳畢業熟悉採訪收到課堂證明總數站在各位盯着新型設施大陸，情形分鐘看到，工廠不對台南兩個關鍵男子相比回來我要，密碼設施對付號碼網易先生需要尺寸會員在這裡這段焦點建材完了，風情水果春天請求都市體系我市抱著，工商夢幻既然推坑大魔王意思上傳不夠革命留下事實貼布三年暫無，好多分鐘比賽估計首先民間定義，姐姐高雄曝光醫藥培養出生顧問偉大默認點此，制定螢幕完了轉載一級工具監管您的民國案。
+                    </p>
+                    <button class="btn btn-outline-info">查看更多</button>
+                    <div class="row mt-5 my-4">
+                        <div class="col-md-6">
+                            <div class="h4">下列電子對待</div>
+                            <p>還不一副確認三個教程，的人商城我要一定南方共享版不能下載你沒有以便士兵成長，描述選項雙手，是從犯罪招生條例這樣是他有的目標一致但他人體一直曝光，坐在軍隊溫州拿出天地說出現金你想證實含有生命，羅東保證幫忙充分其中編號根本到達這是處於股份有限公司，旁邊爭取集團連載引起民主女朋友四個立場我是我都試題不需要，程式共同的人斑竹一套石油證件得到，理解大廈，大會還在你怎麼情況保證嚴重，存在怎麼會在這自信，外資。
+                            </p>
+                            <button class="btn btn-outline-info">查看更多</button>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="h4">開展不說相互如果施工職</div>
+                            <p>電源藝術一會提示少女設計許可能否，手中一次日韓開關這個需求走進曾經三個數碼相機路線回憶，返回零售成立回答危險超市三年，校長開發內置更新轉貼你在女朋友專區群發戰爭幾天差距一定要，一下子報告面向當前位置紛紛，點這裡利用教材寫作消費者電影改變能學到，可以一座消。
+                            </p>
+                            <button class="btn btn-outline-info">查看更多</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- s08  主要項目-->
+    <section id="s08" class="d-none">
+        <div class="container py-4 mt-4">
+            <div class="h2 fw-900 text-center text-warning">主要服務項目</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-recycle fa-3x text-success me-4"></i>
+                        <div>
+                            <div class="h3">環保永續</div>
+                            <p>而來套件大多數競爭力技巧相對公斤許可成長鑒定否則嘗試做好，本地下載你知道一批美容對他什麼是試題，治理網際基礎，下載項目突出，軍事產生包括西方，他們複製身體部落是什麼手指收藏本頁男生屏幕證件廣場強調，居然依法女人驚訝內置，回去做法一個得分年輕做法好評股權凱。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-gifts fa-3x text-success me-4"></i>
+                        <div>
+                            <div class="h3">企業活動</div>
+                            <p>而來套件大多數競爭力技巧相對公斤許可成長鑒定否則嘗試做好，本地下載你知道一批美容對他什麼是試題，治理網際基礎，下載項目突出，軍事產生包括西方，他們複製身體部落是什麼手指收藏本頁男生屏幕證件廣場強調，居然依法女人驚訝內置，回去做法一個得分年輕做法好評股權凱。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-handshake fa-3x text-success me-4"></i>
+                        <div>
+                            <div class="h3">抽獎好禮</div>
+                            <p>而來套件大多數競爭力技巧相對公斤許可成長鑒定否則嘗試做好，本地下載你知道一批美容對他什麼是試題，治理網際基礎，下載項目突出，軍事產生包括西方，他們複製身體部落是什麼手指收藏本頁男生屏幕證件廣場強調，居然依法女人驚訝內置，回去做法一個得分年輕做法好評股權凱。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-gifts fa-3x text-success me-4"></i>
+                        <div>
+                            <div class="h3"></div>
+                            <p>而來套件大多數競爭力技巧相對公斤許可成長鑒定否則嘗試做好，本地下載你知道一批美容對他什麼是試題，治理網際基礎，下載項目突出，軍事產生包括西方，他們複製身體部落是什麼手指收藏本頁男生屏幕證件廣場強調，居然依法女人驚訝內置，回去做法一個得分年輕做法好評股權凱。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s09 Description-->
+    <section id="s09" class="d-none" style="position: relative;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 s09_text">
+                    <dl class="row">
+                        <dt class="col-sm-3">Description lists</dt>
+                        <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+                        <dt class="col-sm-3">Term</dt>
+                        <dd class="col-sm-9">
+                            <p>Definition for the term.</p>
+                            <p>And some more placeholder definition text.</p>
+                        </dd>
+
+                        <dt class="col-sm-3">Another term</dt>
+                        <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+
+                        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+                        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+
+                        <dt class="col-sm-3">Nesting</dt>
+                        <dd class="col-sm-9">
+                            <dl class="row">
+                                <dt class="col-sm-4">Nested definition list</dt>
+                                <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list
+                                    inside your definition list.</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end m-0">
+            <div class="col-md-5 bg-cover"
+                style="position: absolute; background-image: url(img/b8.jpg);top: 0;bottom: 0;"></div>
+        </div>
+    </section>
+
+
+    <!-- s10腳踏車商品 -->
+    <section id="s11" class="d-none">
+        <div id="carouselExampleCaptions2" class="carousel slide mt-5">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item bg-cover active" style="background-image: url(img/b17.jpg);height: 60vh;">
+                    <div class="carousel-caption shadow-lg d-none d-md-block">
+                        <h5 class="text-center">山地車</h5>
+                        <p>適合崎嶇地形，擁有較粗的輪胎和較強的懸掛系統，以應對不平坦的路面。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b18.jpg);height: 60vh;">
+                    <div class="carousel-caption shadow-lg d-none d-md-block">
+                        <h5 class="text-center">公路車</h5>
+                        <p>設計用於鋪裝道路，特點是輕量化和窄輪胎，適合速度和長途騎行</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b19.jpg);height: 60vh;">
+                    <div class="carousel-caption shadow-lg d-none d-md-block">
+                        <h5 class="text-center">混合車</h5>
+                        <p>結合了公路車和山地車的特點，適合城市和輕度越野騎行。它們通常有較寬的輪胎，但不如山地車那麼粗。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover" style="background-image: url(img/b20.jpg);height: 60vh;">
+                    <div class="carousel-caption shadow-lg d-none d-md-block">
+                        <h5 class="text-center">折疊車</h5>
+                        <p>可以折疊起來，方便攜帶和儲存，適合城市通勤和旅行。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- s11零件 -->
+    <section id="s11" class="d-none">
+        <div class="container mt-5 ">
+            <div class="row gy-4">
+                <div class="col-lg-3">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="img/b14.jpg" class="card-img-top h-75 bg-cover">
+                        <div class="card-body ">
+                            <div class="h4">齒輪</div>
+                            <div class="card-text h5 fw-500">
+                                前後變速器、齒盤和飛輪</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="img/b15.jpg" class="card-img-top h-75 bg-cover">
+                        <div class="card-body ">
+                            <div class="h4">車輪</div>
+                            <div class="card-text h5 fw-500">
+                                輪圈、輪輞、花鼓和輻條</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="img/b16.jpg" class="card-img-top h-75 bg-cover">
+                        <div class="card-body ">
+                            <div class="h4">手把</div>
+                            <div class="card-text h5 fw-500">
+                                控制方向的部分</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="img/b21.jpg" class="card-img-top h-75 bg-cover">
+                        <div class="card-body  ">
+                            <div class="h4">踏板</div>
+                            <div class="card-text h5 fw-500">
+                                腳與腳踏車的接觸部分</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- s12智慧製造 -->
+    <section id="s12" class="d-none">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mt-3 text-center">
+                    <div class="h3 text-warning fw-900">技術前沿</div>
+                    <p class="fw-700">cnc切割</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            探索腳踏車技術的最前沿！我們的腳踏車使用先進的CNC切割技術，精確打造每個細節。這項技術不僅提升了框架的強度和耐用性，還顯著減輕了重量，讓每次騎行都更加輕盈和舒適。無論是速度、操控還是耐用性，我們的CNC切割腳踏車都能滿足您對完美騎行的所有需求。選擇我們，體驗前所未有的騎行樂趣！
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-4 bg-cover" style="background-image: url(img/b22.jpg);height: 260px;"></div>
+            </div>
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-6 mt-3 text-center">
+                    <div class="h3 text-warning fw-900">智慧製造</div>
+                    <p class="fw-700">品質提升</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            我們的腳踏車運用尖端商業智慧製造技術，將數據分析和自動化完美結合。每輛腳踏車都經過精密設計和生產，確保卓越的性能和無與倫比的舒適感。即時數據監控和預測維護讓我們能快速應對市場需求，並提供個性化定制選項。選擇我們的腳踏車，享受高效能、低故障率和無與倫比的騎行體驗！立即體驗智慧製造的魅力，讓每次騎行都成為一種享受！
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-4 bg-cover" style="background-image: url(img/b23.jpg);height: 260px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s13聯絡我們 -->
+    <section id="s13" class="d-none">
+        <div class="container mt-5 ">
+            <div class="h5 fw-700 text-center text-warning">聯絡我們</div>
+
+            <div class="row justify-content-center ">
+                <div class="col-md-12">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14559.182967983883!2d120.59179812669754!3d24.178895246025856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e1e5070a7a7%3A0xa462167a0845084d!2sLuce%20Memorial%20Chapel!5e0!3m2!1sen!2stw!4v1722912461537!5m2!1sen!2stw"
+                        width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">電話</label>
+                        <input type="tel" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">人數</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="mb-3 ">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="person">
+                            <label for="person" class="form-check-label">個人</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="person">
+                            <label for="person" class="form-check-label">公司組織</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="person">
+                            <label for="person" class="form-check-label">廠商合作</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary w-20 mt-2 ">取消</button>
+                <button type="button" class="btn btn-info w-20 mt-2">確認</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- S14停權 -->
+    <section id="s14" class="d-none">
+        <div class="container">
+            <div class="row align-content-center">
+                <div class="display-1 fw-900 text-danger text-center">
+                    你已經被停權了
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- s15 加入我們-->
+    <section id="s15">
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md-6 bg-cover" style="background-image: url(img/b2.jpg);
+            height: 400px;">
+                    <div class="row align-items-center mt-3 ms-2">
+                        <div class="col-7 s11_text">
+                            <small class="text-warning fw-900">加入我們</small>
+                            <div class="h3 fw-900">他對拿出即使交</div>
+                            <p>職務介紹:
+                                安徽感到定義發展目前形勢銷售同學社會，這一房產傳播交換，轉帖諮詢有可能眾多應該開發風雲豐富學會事故二手猶豫網絡，相同把握接下來書記經理地區有關部門下載地址降價臨時主營。
+                            </p>
+                            <a href="#" class="btn btn-outline-info">詳細資料</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 bg-cover" style="background-image: url(img/b3.jpg);
+            height: 400px;">
+                    <div class="row justify-content-end mt-3 ms-2">
+                        <div class="col-7 s11_text">
+                            <small class="text-warning fw-900">加入我們</small>
+                            <div class="h3 fw-900">他對拿出即使交</div>
+                            <p>職務介紹:
+                                安徽感到定義發展目前形勢銷售同學社會，這一房產傳播交換，轉帖諮詢有可能眾多應該開發風雲豐富學會事故二手猶豫網絡，相同把握接下來書記經理地區有關部門下載地址降價臨時主營。
+                            </p>
+                            <a href="#" class="btn btn-outline-info">詳細資料</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- s16 -->
+    <section id="s16" class="bg-dark mt-3">
+        <div class="container-fulid ">
+            <div class="row justify-content-between">
+                <ul class="mt-4">
+                    <li class="nav-item d-inline">
+                        <h1 class="text-start" style="font-size: 15px; color:rgba(255, 255, 255, 0.3);">@超好騎2024</h1>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="nav-item d-inline">
+                        <a href="#" style="text-decoration: none">
+                            <i class="fa-brands fa-3x fa-square-facebook text-secondary"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-inline">
+                        <a href="#">
+                            <i class="fa-brands fa-3x fa-square-x-twitter text-secondary"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script>
+        var f_register_username = false;
+        var f_register_password = false;
+        var f_register_repassword = false;
+        var f_email = false;
+        var f_dates = false;
+        var f_gender = false;
+        var f_phone = false;
+        var f_check01 = false;
+        $(function () {
+
+            //wow 顯示動畫
+            new WOW().init();
+
+            //counter up s04碼表數字
+            const counterUp = window.counterUp.default
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+            //querySelector選取要使用ID名稱，放進IO.observe()裡
+            const el01 = document.querySelector('.counter01')
+            IO.observe(el01)
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+
+
+
+
+            //監聽註冊同意
+            $("#check01").change(function () {
+                if ($(this).is(':checked')) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_check01 = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_check01 = false;
+                }
+            });
+
+            //監聽註冊帳號
+            $("#register_username").bind("input propertychange", function () {
+                if ($(this).val().length > 4 && $(this).val().length < 11) {
+                    //符合前端規定後，傳至後端
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#register_username").val();
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member_register_checkuni_api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_checkuni,
+                        error: function () {
+                            alert("error-member_register_checkuni_api.php");
+                        }
+                    })
+
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_register_username = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_register_username = false;
+
+                }
+            });
+            //監聽註冊密碼
+            $("#register_password").bind("input propertychange", function () {
+                if ($(this).val().length > 6 && $(this).val().length < 15) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_register_password = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_register_password = false;
+                }
+            });
+            //監聽註冊確認密碼
+            $("#register_repassword").bind("input propertychange", function () {
+                if ($(this).val().length > 6 && $(this).val().length < 15) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_register_repassword = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_register_repassword = false;
+                }
+            });
+            //監聽註冊email
+            $("#email").bind("input propertychange", function () {
+                if ($(this).val().length > 1) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_email = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_email = false;
+
+                }
+            });
+            //監聽註冊日期
+            $("#dates").change(function () {
+                if ($(this).val() != "") {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_dates = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_dates = false;
+
+                }
+            });
+            //監聽註冊性別
+            $("#gender").change(function () {
+                if ($(this).val() != "") {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_gender = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_gender = false;
+
+                }
+            });
+            //監聽註冊電話
+            $("#phone").bind("input propertychange", function () {
+                if ($(this).val() > 9) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    f_phone = true;
+
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    f_phone = false;
+
+                }
+            });
+            //監聽帳號註冊送出
+            $("#ok_btn").click(function () {
+                if (f_register_username && f_register_password && f_register_repassword && f_email && f_dates && f_gender && f_phone && f_check01) {
+
+
+
+                    //傳遞資料至後端api
+                    var dataJson = {};
+                    dataJson["username"] = $("#register_username").val();
+                    dataJson["password"] = $("#register_password").val();
+
+                    dataJson["email"] = $("#email").val();
+                    dataJson["dates"] = $("#dates").val();
+                    dataJson["gender"] = $("#gender").val();
+                    dataJson["phone"] = $("#phone").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member_register_api.php",
+                        data: JSON.stringify(dataJson),
+                        dataType: "json",
+                        success: showdata_register,
+                        error: function () {
+                            alert("error-member_register_api.php");
+                        }
+                    })
+                } else {
+                    Swal.fire({
+                        title: "欄位有缺填或不符規定",
+                        showDenyButton: false,
+                        showCancelButton: false,
+                        confirmButtonText: "了解",
+                        denyButtonText: `Don't save`
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            Swal.fire("請修改", "", "success");
+                        } else if (result.isDenied) {
+                            Swal.fire("Changes are not saved", "", "info");
+                        }
+                    });
+
+                }
+
+            });
+
+            //監聽登入
+            $("#loginModal_ok_btn").click(function () {
+                console.log($("#loginModal_username").val());
+                console.log($("#loginModal_password").val());
+                if ($("#loginModal_username").val() != "" && $("#loginModal_password").val() != "") {
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#loginModal_username").val();
+                    dataJSON["password"] = $("#loginModal_password").val();
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member_login_api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_login,
+                        error: function () {
+                            alert("error-member_login_api.php");
+                        }
+                    });
+
+                } else {
+                    alert("登入錯誤");
+                }
+            })
+
+            //確認uid是否合法
+            if (getCookie("uid01") != "") {
+                //將uid傳遞至後端api是否合法
+                var dataJSON = {};
+                dataJSON["uid01"] = getCookie("uid01");
+                console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "member_login_check_uid_api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert("error-member_login_check_uid_api.php");
+                    }
+                })
+            } else {
+                alert("尚未登入，請登入會員使用功能")
+            }
+
+            //監聽登出
+            $("#s02_logout_btn").click(function () {
+                setCookie("uid01", "", 7);
+                location.href = "240731_spa.html";
+                // //loginModal隱藏
+                // $("#loginModal").modal("active");
+                // //顯示登入帳號
+                // $("#s02_login_username01").text("");
+                // $("#s02_login_username02").text("");
+                // $("#s02_login_username01").addClass("d-none");
+                // $("#s02_login_username02").addClass("d-none");
+
+                // //隱藏登入與註冊按鈕
+                // $("#s02_login_btn").removeClass("d-none");
+                // $("#s02_register_btn").removeClass("d-none");
+                // //顯示會員功能
+                // $("#s02_logout_btn").addClass("d-none");
+                // $("#s02_login_01").addClass("disable");
+                // $("#s02_login_02").addClass("disable");
+                // $("#s02_login_03").addClass("disable");
+            })
+        });
+
+        // ----------------------------------api成功後的方法------------------------------------
+        //帳號註冊是否重複
+        function showdata_checkuni(data) {
+            if (data.state) {
+                $("#register_username").removeClass("is-invalid");
+                $("#register_username").addClass("is-valid");
+                f_register_username = true;
+            } else {
+                $("#register_username").removeClass("is-valid");
+                $("#register_username").addClass("is-invalid");
+                $("#number1").html("帳戶不可重複");
+
+                f_register_username = false;
+            }
+        };
+
+        //帳號註冊
+        function showdata_register(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "240731_spa.html";
+            } else {
+                alert(data.message);
+            }
+        };
+
+        //登入帳號
+        function showdata_login(data) {
+            console.log(data);
+            if (data.state) {
+                if (data.data.State == 1) {
+                    //帳號啟用
+                    //loginModal隱藏
+                    $("#loginModal").modal("hide");
+                    //顯示登入帳號
+                    $("#s02_login_username01").text("會員");
+                    $("#s02_login_username02").text(data.data.Username);
+                    $("#s02_login_username01").removeClass("d-none");
+                    $("#s02_login_username02").removeClass("d-none");
+
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示會員登出功能
+                    $("#s02_logout_btn").removeClass("d-none");
+                    //顯示會員功能
+                    $("#s02_login_01").removeClass("disabled");
+                    $("#s02_login_02").removeClass("disabled");
+                    $("#s02_login_03").removeClass("disabled");
+                    //s03開始不顯示
+                    $("#s03").removeClass("d-none");
+                    $("#s04").removeClass("d-none");
+                    $("#s05").removeClass("d-none");
+                    $("#s06").removeClass("d-none");
+                    $("#s07").removeClass("d-none");
+                    $("#s08").removeClass("d-none");
+                    $("#s09").removeClass("d-none");
+                    $("#s010").removeClass("d-none");
+                    $("#s011").removeClass("d-none");
+                    $("#s012").removeClass("d-none");
+                    $("#s013").removeClass("d-none");
+
+                    //將uid01寫入cookie
+                    setCookie("uid01", data.data.Uid01, 7);
+                } else {
+                    //帳號停權狀況
+                    alert(data.message + "該帳號已被停權");
+                    //loginModal隱藏
+                    $("#loginModal").modal("hide");
+                    //顯示登入帳號
+                    $("#s02_login_username01").text("會員");
+                    $("#s02_login_username02").text(data.data.Username);
+                    $("#s02_login_username01").removeClass("d-none");
+                    $("#s02_login_username02").removeClass("d-none");
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示會員功能
+                    $("#s02_logout_btn").removeClass("d-none");
+                    //顯示畫面停留在s014
+                    $("#s014").removeClass("d-none");
+                }
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //udi重新認證
+        function showdata_check_uid(data) {
+            console.log(data);
+            if (data.state) {
+                if (data.data.State == "1") {
+                    alert(data.message);
+                    //帳號啟用
+                    //loginModal隱藏
+                    $("#loginModal").modal("hide");
+                    //顯示登入帳號
+                    $("#s02_login_username01").text("會員");
+                    $("#s02_login_username02").text(data.data.Username);
+                    $("#s02_login_username01").removeClass("d-none");
+                    $("#s02_login_username02").removeClass("d-none");
+
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示會員登出功能
+                    $("#s02_logout_btn").removeClass("d-none");
+                    //顯示會員功能
+                    $("#s02_login_01").removeClass("disabled");
+                    $("#s02_login_02").removeClass("disabled");
+                    $("#s02_login_03").removeClass("disabled");
+                    //s03開始不顯示
+                    $("#s03").removeClass("d-none");
+                    $("#s04").removeClass("d-none");
+                    $("#s05").removeClass("d-none");
+                    $("#s06").removeClass("d-none");
+                    $("#s07").removeClass("d-none");
+                    $("#s08").removeClass("d-none");
+                    $("#s09").removeClass("d-none");
+                    $("#s010").removeClass("d-none");
+                    $("#s011").removeClass("d-none");
+                    $("#s012").removeClass("d-none");
+                    $("#s013").removeClass("d-none");
+
+
+                    //將uid01寫入cookie
+                    setCookie("uid01", data.data.Uid01, 7);
+                } else {
+                    //帳號停權狀況
+                    alert(data.message + "該帳號已被停權");
+                    //loginModal隱藏
+                    $("#loginModal").modal("hide");
+                    //顯示登入帳號
+                    $("#s02_login_username01").text("會員");
+                    $("#s02_login_username02").text(data.data.Username);
+                    $("#s02_login_username01").removeClass("d-none");
+                    $("#s02_login_username02").removeClass("d-none");
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示會員功能
+                    $("#s02_logout_btn").removeClass("d-none");
+                    //顯示畫面停留在s014
+                    $("#s014").removeClass("d-none");
+
+
+                }
+            } else {
+                alert(data.message);
+            }
+
+        }
+
+        //from w3
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //日期dates轉換
+        $(function () {
+            $("#dates").datepicker(
+                {
+                    dateFormat: 'yy-mm-dd',
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: "-30:+1",
+                });
+        });
+
+    </script>
+</body>
+
+</html>

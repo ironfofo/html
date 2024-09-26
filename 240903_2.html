@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>觀光署會員資料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+
+</head>
+
+<body>
+    <div class="conteiner">
+        <div class="row justify-content-center mt-4">
+            <div class="col-10">
+                <div class="card h-100">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        var hoteldata = [];
+        var regionTitle = [];
+        var counter = [];
+        var regionData = [];
+        var myChart;
+        $(function () {
+
+            const ctx = document.getElementById('myChart');
+            myChart = new Chart(ctx, {
+
+                type: 'line',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange000'],
+                    datasets: [{
+                        label: '區域分類',
+                        data: [200, 300, 400, 500, 600, 700],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            //載入hoteldata
+            $.ajax({
+                type: "GET",
+                url: "js/hotel_C_f.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    hoteldata = data.XML_Head.Infos.Info;
+                },
+                error: function () {
+                    alert("error-js/hotel_C_f.json");
+                }
+            });
+
+            console.log(hoteldata);
+            hoteldata.forEach(function (item) {
+                // console.log(item.Region);
+                if (counter[item.Region] == undefined) {
+                    counter[item.Region] = regionData.length;
+                    regionData.push(new Array());
+                    regionTitle[counter[item.Region]] = item.Region;
+                }
+                regionData[counter[item.Region]].push(item);
+            });
+
+            console.log(regionTitle);
+            console.log(counter);
+            console.log(regionData);
+
+            //更新chartjs數據
+            myChart.data.labels = [];
+            myChart.data.datasets[0].data = [];
+
+            regionTitle.forEach(function (item) {
+                console.log(item);
+                //X軸
+                myChart.data.labels.push(item);
+                //Y軸
+                myChart.data.datasets[0].data.push(regionData[counter[item]].length);
+            });
+            myChart.update();
+
+        })
+    </script>
+
+</body>
+
+</html>

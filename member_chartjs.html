@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chart.js</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body>
+    <!-- *************s02*************************** -->
+    <section id="s02" class="bg-dark sticky-lg-top wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0s"
+        data-wow-iteration="1">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                </style>>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><i class="fa-solid fa-bicycle"></i>路過腳踏車店-會員報表</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="240731_spa.html">首頁</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    VIP會員功能
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" href="240731_Product.html"
+                                            id="s02_login_01">產品建檔</a></li>
+                                    <li><a class="dropdown-item disabled" href="240731_member_control_panel.html"
+                                            id="s02_login_02">會員管理</a></li>
+                                    <li><a class="dropdown-item disabled" href="#" id="s02_login_03">會員功能</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <span class="h5 text-success fw-500 d-none" id="s02_login_username01">會員:</span> <span
+                                class="h5 text-danger fw-500 d-none" id="s02_login_username02">xxx</span>
+                            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                id="s02_login_btn">登入</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
+                                id="s02_register_btn">註冊</button>
+                            <button class="btn btn-primary d-none" id="s02_logout_btn">登出</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="display-3 fw-900">會員人數</div>
+                        <div class="display-2 text-danger fw-900 text-center">99</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="display-3 fw-900">會員人數</div>
+                        <div class="display-2 text-danger fw-900 text-center">99</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="display-3 fw-900">會員人數</div>
+                        <div class="display-2 text-danger fw-900 text-center">99</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="display-3 fw-900">會員人數</div>
+                        <div class="display-2 text-danger fw-900 text-center">99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-6">
+                <div class="card h-100">
+
+                    <canvas id="myChart"></canvas>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card h-100">
+
+                    <canvas id="myChart01"></canvas>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <canvas id="myChart02"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+        var mychart;
+        var mychart01;
+        var mychart02;
+
+        $(function () {
+            //ajax讀取會員等級資料
+            $.ajax({
+                type: "GET",
+                url: "member_chart_level_api.php",
+                dataType: "json",
+                success: showdata_chart_level,
+                error: function () {
+                    alert("error-member_chart_level_api.php");
+                }
+            });
+
+
+            //myChart
+
+            const ctx = document.getElementById('myChart');
+
+            mychart = new Chart(ctx, {
+
+                type: 'line',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange000'],
+                    datasets: [{
+                        label: '圖表名稱',
+                        data: [200, 300, 400, 500, 600, 700],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            //myChart01
+            const ctx01 = document.getElementById('myChart01');
+
+            mychart01 = new Chart(ctx01, {
+
+                type: 'pie',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange000'],
+                    datasets: [{
+                        label: '圖表名稱',
+                        data: [200, 300, 400, 500, 600, 700],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            //myChart02
+            const ctx02 = document.getElementById('myChart02');
+
+            mychart02 = new Chart(ctx02, {
+
+                type: 'pie',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange000'],
+                    datasets: [{
+                        label: '圖表名稱',
+                        data: [200, 300, 400, 500, 600, 700],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        })
+
+
+
+        function showdata_chart_level(data) {
+            console.log(data);
+
+            //先清空
+            mychart.data.labels = [];
+            mychart.data.datasets[0].data = [];
+            
+            data.data.forEach(function (item) {
+                console.log(item.level);
+                console.log(item.levelcount);
+                if (item.level == 900) {
+                    mylevel = "管理員";
+                } if (item.level == 100) {
+                    mylevel = "一般會員";
+                } if (item.level == 200) {
+                    mylevel = "金牌員";
+                } else if (item.level == 300) {
+                    mylevel = "白金會員";
+                }
+                mychart.data.labels.push(mylevel);
+                mychart.data.datasets[0].data.push(item.levelcount);
+                mychart.update();
+            });
+
+
+            mychart01.data.labels = [];
+            mychart01.data.datasets[0].data = [];
+            data.data.forEach(function (item) {
+                console.log(item.level);
+                console.log(item.levelcount);
+                if (item.level == 900) {
+                    mylevel = "管理員";
+                } if (item.level == 100) {
+                    mylevel = "一般會員";
+                } if (item.level == 200) {
+                    mylevel = "金牌員";
+                } else if (item.level == 300) {
+                    mylevel = "白金會員";
+                }
+                mychart01.data.labels.push(mylevel);
+                mychart01.data.datasets[0].data.push(item.levelcount);
+                mychart01.update();
+            });
+
+
+            mychart02.data.labels = [];
+            mychart02.data.datasets[0].data = [];
+            data.data.forEach(function (item) {
+                console.log(item.level);
+                console.log(item.levelcount);
+                if (item.level == 900) {
+                    mylevel = "管理員";
+                } if (item.level == 100) {
+                    mylevel = "一般會員";
+                } if (item.level == 200) {
+                    mylevel = "金牌員";
+                } else if (item.level == 300) {
+                    mylevel = "白金會員";
+                }
+                mychart02.data.labels.push(mylevel);
+                mychart02.data.datasets[0].data.push(item.levelcount);
+                mychart02.update();
+            });
+        }
+    </script>
+</body>
+
+</html>
